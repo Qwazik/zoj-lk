@@ -1,0 +1,740 @@
+@import "settings/mixins";
+/*-------------------------------------------------*/
+/*    bootstrap
+/*-------------------------------------------------*/
+@import "libs/normalize";
+/*-------------------------------------------------*/
+/*    boilerplate
+/*-------------------------------------------------*/
+@import "libs/boilerplate";
+/*-------------------------------------------------*/
+/*    fancybox
+/*-------------------------------------------------*/
+@import "libs/fancybox";
+/*-------------------------------------------------*/
+/*    owl-carousel
+/*-------------------------------------------------*/
+@import "libs/owl.carousel";
+/*-------------------------------------------------*/
+/*    font-awesome
+/*-------------------------------------------------*/
+@import "libs/font-awesome.min";
+/*-------------------------------------------------*/
+/*    jquery-formstyler
+/*-------------------------------------------------*/
+@import "libs/jquery.formstyler";
+/*-------------------------------------------------*/
+/*    fonts
+/*-------------------------------------------------*/
+@import "settings/fonts";
+/*-------------------------------------------------*/
+/*  author styles
+/*-------------------------------------------------*/
+$bg-color: #FFFCD9;
+$orange: #fa5720;
+$orangeLine: #F73E13;
+
+body{
+	background-color: $bg-color;
+	font-family: Furore;
+	min-width: 320px;
+}
+
+.page{
+	max-width: 1920px;
+	margin: 0 auto;
+	box-shadow: 0 0 10px gray;
+}
+
+.container{
+	width: 960px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+a{
+	position: relative;
+	z-index: 3;
+}
+
+
+
+/*-------------------------------------------------*/
+/*  elements
+/*-------------------------------------------------*/
+h2{
+	font-size: 58px;
+	font-weight: 400;
+	line-height: 58px;
+	text-transform: uppercase;
+}
+
+.texture{
+	position: relative;
+	&:after{
+		content: ' ';
+		background-image: url('../img/texture.png');
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		height: 100%;
+		top: 0;
+		background-position: top center;
+		z-index: 2;
+	}
+}
+
+.social{
+	display: inline-block;
+	li{
+		
+		display: inline-block;
+		margin: 0 4px;
+	}
+	a{
+		border-radius: 50%;
+		display: block;
+		height: 38px;
+		width: 38px;
+		line-height: 38px;
+		color: white;
+		text-decoration: none;
+		font-size: 17px;
+		border: 2px solid #f3f4dd;
+		background-color: $orange;
+		background-image: url('../img/texture.png');
+		background-position: center 65px;
+		&:hover{
+			background-color: red;
+		}
+	}
+}
+
+.btn{
+	box-sizing: border-box;
+	display: inline-block;
+	max-width: 100%;
+	cursor: pointer;
+
+	&--dblbd{
+
+		color: white;
+		font-size: 29px;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 9px 28px;
+		border: 7px solid transparent;
+		outline: 2px solid white !important;
+		box-shadow: inset 0 0 0px 2px white;
+		&:hover{
+			@extend .texture;
+		&:after{
+			left: -12px;
+			right: -12px;
+			top: -12px;
+			bottom: -12px;
+			width: auto;
+			height: auto;
+		}
+			border-color: white;
+			background-color: #fff;
+			color: $orange;
+
+		}
+	}
+	&--cabinet{
+		font-family: Impact;
+		text-transform: uppercase;
+		border: 3px solid #e4e1c4;
+		text-decoration: none;
+		color: white;
+		padding: 10px 30px;
+		&:hover{
+			@extend .texture;
+		&:after{
+			left: -3px;
+			right: -3px;
+			top: -3px;
+			bottom: -3px;
+			width: auto;
+			height: auto;
+		}
+			color: $orange;
+			border-color: white;
+			background-color: #fff;
+		}
+	}
+	&--orange{
+		border: 4px solid #ffffff;
+		background-color: $orange;
+		font-size: 13px;
+		width: 222px;
+		height: 46px;
+		text-decoration: none;
+		line-height: 38px;
+		color: white;
+		background-image: url('../img/texture.png');
+		background-position: center center;
+
+			&:hover{
+				background-color: red;
+			}
+		}
+	&--orng{
+		text-decoration: none;
+		display: inline-block;
+		border: none;
+		width: 100%;
+		height: 33px;
+		border-radius: 5px;
+		background-color: #f73e13;
+		color: white;
+		border: 2px solid #f73e13;
+		text-align: center;
+		transition: background-color .3s;
+		line-height: 28px;
+		&:hover{
+			background-color: #fff;
+			color: #f73e13;
+			border: 2px solid #f73e13;
+		}
+	}
+}
+
+.input{
+
+	&--default{
+		font-family: Arial;
+		outline: none;
+		height: 33px;
+		border-radius: 5px;
+		border: 2px solid white;
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		transition: border-color .4s;
+		&:focus{
+			border-color: #F73E13;
+		}
+	}
+}
+.jq-selectbox .select--default + .jq-selectbox__select{
+	border: 2px solid  white;
+	transition: border-color .4s;
+}
+.jq-selectbox.focused .select--default + .jq-selectbox__select{
+			border: 2px solid #F73E13 !important;
+		}
+.select{
+	&--default{
+		width: 100%;
+		box-sizing: border-box;
+		.jq-selectbox__select{
+			border-color: transparent;
+			box-shadow: none;
+			background: none;
+			background-color: #fff;
+			padding: 0;
+		}
+
+		.jq-selectbox__trigger{
+			border: none;
+		}
+		.jq-selectbox__trigger-arrow{
+			border: none;
+			top: 0;
+			right: 25px;
+			&:before{
+				color: #151515;
+				font-size: 18px;
+				line-height: 0;
+				font-family: FontAwesome;
+				content: '';
+			}
+		}
+	}
+}
+
+.checkbox{
+	&--big{
+		width: 30px;
+		height: 30px;
+	}
+}
+
+
+
+
+.zi{
+	position: relative;
+	z-index: 3;
+}
+
+.max-width-login{
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sep{
+	width: 92px;
+	height: 1px;
+	background-color: #cbc69b;
+	margin: 14px auto;
+}
+
+.link{
+	color: #151515;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 24px;
+	text-decoration: underline;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.page-type{
+	margin: 4px 0 13px;
+	text-shadow:
+	       2px 2px 0 rgba(255, 255, 255, 0.80),
+	       -2px -2px 0 rgba(255, 255, 255, 0.80),
+	       -2px 2px 0 rgba(255, 255, 255, 0.80),
+	       2px -2px 0 rgba(255, 255, 255, 0.80),
+	       1px 3px 7px rgba(0, 0, 0, 0.65);
+	color: #f73e13;
+	font-family: Furore;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 1.2em;
+	span{
+		font-size: .8em;
+		line-height: .8em;
+	}
+}
+
+.page-type__desc{
+	color: #151515;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.3em;
+	
+}
+
+.form-title{
+	color: #151515;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 26px;
+	display: block;
+}
+
+.form-agree{
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+	color: black;
+	position: relative;
+	width: 100%;
+	margin: 24px 0;
+	.link{
+		line-height: 1em;
+	}
+	.checkbox--big{
+		background: none;
+		background-color: #fff;
+		border: none;
+		border-radius: 5px;
+		position: absolute !important;
+		left: 0;
+		top: 0px;
+		&.checked .jq-checkbox__div{
+			background: none;
+			box-shadow: none;
+			&:after{
+				font-family: FontAwesome;
+				color: #e33200;
+				font-size: 24px;
+				line-height: 26px;
+				padding-left: 1px;
+				content: '';
+			}
+		}
+	}
+}
+
+/*-------------------------------------------------*/
+/*  header
+/*-------------------------------------------------*/
+
+.plug{
+	position: fixed;
+	background-color: #fff;
+	background-color: rgba(#fff, .86);
+	background-image: url('../img/plug.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	width: 100%;
+	z-index: 4;
+	height: 1000px;
+	top: 0;
+
+}
+
+@media screen and (max-width: 767px){
+	.plug{
+		background-size: 400px auto;
+	}
+}
+@media screen and (max-width: 480px){
+	.plug{
+		background-size: 300px auto;
+	}
+}
+
+.main-header{
+	background-position: top center;
+	&--login{
+		background: none;
+		padding-top: 30px;
+	}
+	.account{
+		color: #433b30;
+		font-size: 12px;
+		letter-spacing: -.5px;
+		margin-bottom: 30px;
+		display: inline-block;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	&__logo{
+		margin-bottom: 23px;
+		a{
+			
+			display: inline-block;
+		}
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	.slogan{
+		font-size: 27px;
+		padding: 7px 24px;
+		display: inline-block;
+		color: white;
+		background-color: #ee3907;
+		position: relative;
+		margin-bottom: 9px;
+		color: #f3f3e6;
+		span{
+			position: relative;
+			z-index: 2;
+		}
+		&:before,&:after{
+			top: 100%;
+			content: '';
+			position: absolute;
+			width: 79px;
+			height: 54px;
+			display: inline-block;
+			
+		}
+		&:before{
+			z-index: 1;
+			right: 100%;
+			margin-right: -39px;
+			margin-top: -19px;
+			background-image: url('../img/slogan-left.png');
+		}
+		&:after{
+			z-index: 1;
+			left: 100%;
+			margin-left: -39px;
+			margin-top: -19px;
+			background-image: url('../img/slogan-right.png');
+		}
+	}
+	.last{
+		span{
+			display: block;
+			font-size: 57px;
+			line-height: 1.5em;
+			&:last-child{
+				font-family: "NautilusPompilius";
+				font-size: 35px;
+				
+				line-height: 35px;
+			}
+		}
+	}
+	&__top{
+		text-align: center;
+		// background-image: url('../img/texture.png'), url('../img/bg-top-line.png');
+		// background-position: center bottom, top center;
+		background-image: url('../img/bg-top-line.png');
+		background-position: top center;
+		background-repeat: no-repeat;
+		padding-top: 20px;
+		z-index: 5;
+		position: relative;
+	}
+	&__body{
+		padding-top: 14px;
+		text-align: center;
+		position: relative;
+		&:after{
+			z-index: 2;
+			background-position: top center;
+			background-size: cover;
+			bottom: 192px;
+		}
+		.container{
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.centered{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+.page__enter{
+	margin-top: 120px;
+	text-align: center;
+	padding-top: 41px;
+	padding-bottom: 0px;
+	background-color: $orangeLine;
+	position: relative;
+	&:after{
+		content: '';
+		display: block;
+		width: 100%;
+		background-color: $orangeLine;
+		height: 100px;
+		position: absolute;
+		top: 100%;
+		margin-top: -50px;
+	
+		transform: skewY(3deg);
+	}
+	.centered{
+		position: relative;
+	}
+}
+
+/*-------------------------------------------------*/
+/*  main-footer
+/*-------------------------------------------------*/
+
+.page__main-footer{
+	background-image: url('../img/bg-footer.png');
+	background-repeat: no-repeat;
+	
+	text-align: center;
+	padding: 80px 0 50px;
+	font-size: 35px;
+	a{
+		color: white;
+		text-decoration: none;
+		&:before{
+			content: ' | ';
+		}
+		&:first-child:before{
+			display: none;
+		}
+		&:hover span{
+			text-decoration: underline;
+		}
+	}
+}
+
+/* ################################# */
+/* ##########  ACCOUNT  ############ */
+/* ################################# */
+
+.login-form{
+	p{
+		margin: 20px 0;
+		font-size: 14px;
+		font-family: Arial;
+	}
+	padding: 0 10px;
+	margin-top: -11px;
+	margin-bottom: 80px;
+	text-align: center;
+	max-width: 341px;
+	margin-left: auto;
+	margin-right: auto;
+	label{
+		width: 100%;
+		display: block;
+	}
+	.btn--orng{
+		margin-top: 7px;
+	}
+}
+
+[class*='fancybox-form']{
+	.header{
+		text-transform: uppercase;
+		margin-bottom: 1em;
+		display: block;
+	}
+	font-size: 14px;
+	font-family: Arial;
+}
+
+/*-------------------------------------------------*/
+/*  fancybox
+/*-------------------------------------------------*/
+.fancybox-close{
+	top: 0;
+	right: 0;
+	background: none;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABZElEQVQoU22R20obURSGvz8z+BBii8kkEd+gtLZi7zwk9qZqbXtVLLTv0AvBdxC8EaxHbEGIGBB6UzTWN7B1EtPSp5DZe5UZkjAW19Vm/Yf1r7UFcF0rT8rsnbytRSedX2mvX3E9KuP5JGwrOu58U4+8DowDZ5K9jhqdP5nRdHlEgW0Dk8BPxEfFc9EesJQzbTmChSF/63xQODDTsz5m6Ks69eKYmTbyANDCMMSTgZFx7imsKG3cvBgddUnwGZjI58+9f5jTm0ozbmeCtOL56AEJe3dcAWGX8rZYOrn5nfIGgqv62HDok33g6X9TWua0WGnGfweCdq300ExbvWvcl+osCN3b4lG3q+zOxgbGVJ+ZxjBkwKNBT/ZdsveKZ6NdxKs75EAvEwtd6JND4HEO+6K4Fj3HSD+uClwEoVtOR6ekXtSd7HqiXZD/kC3dE60EcqvFRvcqv0R7plS1glYNbVaO49N/QBuTAbzm8i0AAAAASUVORK5CYII=);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fancybox-skin{
+	padding: 35px 30px !important; 
+	padding-right: 8px !important;
+	border-radius: 15px;
+}
+.fancybox-inner{
+	max-width: 670px;
+	margin-left: auto;
+	margin-right: 0;
+	&>div{
+		padding-right: 22px;
+	}
+}
+
+
+/*-------------------------------------------------*/
+/*  helper classes
+/*-------------------------------------------------*/
+.tt{
+	text-transform: uppercase;
+}
+.orange{
+	color: $orange;
+	font-size: 35px;
+	font-weight: 400;
+	line-height: 35px;
+	font-family: Impact;
+	text-transform: uppercase;
+}
+
+.fl-left{
+    float: left;
+}
+.fl-right{
+    float:right;
+}
+.ta-left{
+    text-align: left;
+    text-align-last: left;
+}
+.ta-center{
+    text-align: center;
+    text-align-last: center;
+}
+.ta-right{
+    text-align: right;
+    text-align-last: right;
+}
+.blocks-justify{
+	width: 100%;
+
+	text-align: justify;
+	
+	/* Обнуляем для родителя*/
+	line-height: 0;
+	font-size: 1px; /* 1px для Opera */
+	
+	/* Лекарство для IE6-7*/
+	text-justify: newspaper;
+	zoom:1;
+	
+	/* Включаем в работу последнюю строку*/		
+	text-align-last: justify;
+	&:after	{
+		width: 100%; 
+		height: 0px;
+		visibility: hidden;
+		overflow: hidden;
+		content: '';
+		display: inline-block;
+	}
+	& > div	{
+		display: inline-block;
+		text-align: left;
+		text-align-last: left;
+		/* Востанавливаем у потомков, кроме последнего*/
+		line-height: normal;
+		font-size: 16px;
+		
+		/* Без него в Opera будет отступ под элементами */
+		vertical-align: top; 
+		
+		/* эмуляция inline-block для IE6-7*/
+		//display : inline;
+		//zoom : 1;
+	}
+}
+.hidden {
+    display: none;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+.invisible {
+    visibility: hidden;
+}
+.container:before,
+.container:after,
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.container:after,
+.clearfix:after {
+    clear: both;
+}
+.container,
+.clearfix {
+    *zoom: 1;
+}
+/*-------------------------------------------------*/
+/*    media
+/*-------------------------------------------------*/
+@import 'media';

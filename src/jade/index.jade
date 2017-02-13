@@ -1,0 +1,24 @@
+extends _template
+
+block main
+	// header
+	.plug
+	.page__header
+		header.main-header
+			.main-header__top
+				.container
+					ul.social
+						li: a(href="#").fa 
+						li: a(href="#").fa 
+						li: a(href="#").fa 
+			.main-header__body.max-width-login
+				.container
+					.centered
+						.main-header__logo
+							a(href="/"): img(src="img/logo.png", alt="Убойный ЗОЖ", title="Убойный ЗОЖ")
+						p.slogan: span Наприсeдай на миллион!
+						p.last
+							span Старт
+							span 15 марта
+
+	// header end

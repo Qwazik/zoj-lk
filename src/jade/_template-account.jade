@@ -1,0 +1,31 @@
+doctype html
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru">
+<![endif]-->
+<!--[if IE 7]>         
+<html class="no-js lt-ie9 lt-ie8" lang="ru">
+<![endif]-->
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang="ru">
+<![endif]-->
+html.no-js(lang='ru')
+	include includes/head
+	body
+		<!--[if lt IE 9]>
+		script(src='libs/respond.min.js')
+		script(src='libs/selectivizr-min.js')
+		<![endif]-->
+		<!--[if lt IE 8]>
+		p.browserupgrade
+			|Ваш браузер  
+			strong устарел
+			| . Пожалуйста 
+			a(href='http://browsehappy.com/') обновите ваш браузер
+			|  для корректного отображения сайтов.
+		<![endif]-->
+		.page
+			include includes/header-account
+			block main
+		//scripts =================================================
+		include includes/scripts
+   
